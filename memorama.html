@@ -1,19 +1,165 @@
 <!DOCTYPE html>
 <meta charset="UTF-8">
 <html>
+   <html lang="es">
    <head>
       <link rel="stylesheet" href="memorama.css">
+      <style>
+         .audio{
+            display: none;
+            transition: 0.1s;
+           
+         }
+
+         .Main{
+            background-repeat: no-repeat;
+        background-size: cover;
+        background-image: url("Main.png");
+        height: 50px;
+        aspect-ratio: 1 / 1 ;
+        margin: 0 auto;
+        border-collapse: collapse;
+        border-radius: 20px 0px 20px 0;
+        
+         }
+         
+         #miTabla {
+            display: none; 
+            border-collapse: collapse;
+            width: 500px;
+            height: 650px;
+            margin: 0 auto;
+            background: rgb(5, 53, 96);
+           
+            
+        }
+        
+
+        #Reanude{
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-image: url("reanude.png");
+        height: 100px;
+        aspect-ratio: 1 / 1 ;
+        border-radius:  20px 0px 20px 0 ;
+        
+        }
+
+        #Restart{
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-image: url("Reset.png");
+        height: 100px;
+        aspect-ratio: 1 / 1 ;
+        border-radius: 20px 0px 20px 0;
+        }
+
+        #Leave{
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-image: url("Leave.png");
+        height: 100px;
+        aspect-ratio: 1 / 1 ;
+        border-radius: 20px 0px 20px 0;
+        }
+        a{
+            text-decoration: none;
+        }
+       
+        #Easy{
+            background-repeat: no-repeat;
+        background-size: cover;
+        background-image: url("Easy.jpeg");
+        height: 60px;
+        aspect-ratio: 1 / 1 ;
+        border-radius: 20px 0px 20px 0;
+        }
+        
+        #Medium{
+            background-repeat: no-repeat;
+        background-size: cover;
+        background-image: url("Normal.jpeg");
+        height: 60px;
+        aspect-ratio: 1 / 1 ;
+        border-radius: 20px 0px 20px 0;
+        }
+
+        #Hard {
+            background-repeat: no-repeat;
+        background-size: cover;
+        background-image: url("Hard.jpeg");
+        height: 60px;
+        aspect-ratio: 1 / 1 ;
+        border-radius: 20px 0px 20px 0;
+        }
+        
+         </style >
    </head>
    <body>
       
       <title>Memorama</title>
       <div id="difficulty">
-         <button onclick="setDifficulty('easy')">Fácil</button>
-         <button onclick="setDifficulty('medium')">Medio</button>
-         <button onclick="setDifficulty('hard')">Difícil</button>
-     </div>
-     <div id="game"></div>
-     <div id="stats"></div>
+        <center><button id="Easy" onclick="setDifficulty('easy')"></button>
+        <button id="Medium" onclick="setDifficulty('medium')"></button>
+        <button id="Hard" onclick="setDifficulty('hard')"></button></center>
+    </div>
+      <audio autoplay><source src='Undertale Remixed ▸ Spider Dance ▸ Holder Remix(MP3_160K).mp3'></audio>
+      
+      <button class="Main" onclick="mostrarTabla()"></button>
+
+    <table id="miTabla">
+        <tr>
+            <th><button id="Reanude" onclick="reanude()"></button></th>
+            
+        </tr>
+        <tr>
+            <th><button id="Restart" onclick="Reset()"></button></th>
+        </tr>
+        <tr>
+            <th><button id="Leave" onclick="Salir()"></button></th>
+        </tr>
+    </table>
+
+      <div id="stats">0 intentos</div>
+      
+      <div id="wrapper">
+        
+         <div id="game"></div>
+        
+      </div>
+      
       <script src="avance.js"></script>
+      <script>
+         function mostrarTabla() {
+             const tabla = document.getElementById('miTabla');
+             if (tabla.style.display === 'none') {
+                 tabla.style.display = 'table'; 
+             } else {
+                 tabla.style.display = 'none';
+             }
+         }
+ 
+        
+ 
+ function Salir(){
+ window.close();
+ }
+ 
+ function reanude(){
+ document.getElementById('Reanude').addEventListener('click', function(){
+     const tabla = document.getElementById('miTabla');
+     tabla.style.display = 'none';
+ });
+ }
+ 
+ 
+
+ function Reset(){
+   location.reload();
+ }
+
+
+     </script>
+      
    </body>
 </html>

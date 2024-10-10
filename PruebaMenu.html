@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mostrar Tabla</title>
+    <style>
+        #miTabla {
+            display: none; 
+            border-collapse: collapse;
+            width: 500px;
+            height: 650px;
+            margin: 0 auto;
+        }
+        #Reanude{
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-image: url("reanude.png");
+        height: 100px;
+        aspect-ratio: 1 / 1 ;
+        border-radius: 20px 0px 20px 0;
+        }
+
+        #Restart{
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-image: url("Reset.png");
+        height: 100px;
+        aspect-ratio: 1 / 1 ;
+        border-radius: 20px 0px 20px 0;
+        }
+
+        #Leave{
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-image: url("Leave.png");
+        height: 100px;
+        aspect-ratio: 1 / 1 ;
+        border-radius: 20px 0px 20px 0;
+        }
+        a{
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+
+    <button onclick="mostrarTabla()">Mostrar Tabla</button>
+
+    <table id="miTabla">
+        <tr>
+            <th><button id="Reanude"></button></th>
+            
+        </tr>
+        <tr>
+            <th><button id="Restart"><a href="memorama.html"></a></button></th>
+        </tr>
+        <tr>
+            <th><button id="Leave" onclick="Salir()">Salir</button></th>
+        </tr>
+    </table>
+
+    <script>
+        function mostrarTabla() {
+            const tabla = document.getElementById('miTabla');
+            if (tabla.style.display === 'none') {
+                tabla.style.display = 'table'; // Muestra la tabla
+            } else {
+                tabla.style.display = 'none'; // Oculta la tabla
+            }
+        }
+
+       
+
+function Salir(){
+window.close();
+}
+
+function reanude(){
+document.getElementById('Reanude').addEventListener('click', function(){
+    const tabla = document.getElementById('miTabla');
+    tabla.style.display = 'none';
+});
+}
+
+reanude();
+    </script>
+
+</body>
+</html>

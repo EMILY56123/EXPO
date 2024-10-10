@@ -1,4 +1,3 @@
-
 const totalCards = 12;
 const availableCards = ['A', 'K', 'Q', 'J'];
 let cards = [];

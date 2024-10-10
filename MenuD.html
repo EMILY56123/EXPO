@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Memorama</title>
+    <style>
+        #miTabla {
+            display: none; 
+            border-collapse: collapse;
+            width: 500px;
+            height: 650px;
+            margin: 0 auto;
+            background: rgb(5, 53, 96);
+        }
+        #Easy{
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-image: url("Easy.jpeg");
+        height: 100px;
+        aspect-ratio: 1 / 1 ;
+        border-radius: 20px 0px 20px 0;
+        }
+
+        #Normal{
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-image: url("Normal.jpeg");
+        height: 100px;
+        aspect-ratio: 1 / 1 ;
+        border-radius: 20px 0px 20px 0;
+        }
+
+        #Hard{
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-image: url("Hard.jpeg");
+        height: 100px;
+        aspect-ratio: 1 / 1 ;
+        border-radius: 20px 0px 20px 0;
+        }
+        a{
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+
+    <button onclick="mostrarTabla()">Mostrar Tabla</button>
+
+    <table id="miTabla">
+        <tr>
+            <th><button id="Easy"><a href="#"></a></button></th>
+            
+        </tr>
+        <tr>
+            <th><button id="Normal"><a href="#"></a></button></th>
+        </tr>
+        <tr>
+            <th><button id="Hard"><a href="#"></a></button></th>
+        </tr>
+    </table>
+
+    <script>
+        function mostrarTabla() {
+            const tabla = document.getElementById('miTabla');
+            if (tabla.style.display === 'none') {
+                tabla.style.display = 'table'; // Muestra la tabla
+            } else {
+                tabla.style.display = 'none'; // Oculta la tabla
+            }
+        }
+    </script>
+</body>
+</html>
